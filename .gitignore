@@ -1,0 +1,3 @@
+*.log
+.env
+/public/panel/lib/conexion.php

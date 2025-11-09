@@ -1,0 +1,20 @@
+.main{
+    padding-top: 30px;
+}
+
+#currentDate{
+    margin-bottom: 34px;
+    font-size: 12px;
+}
+
+.box__opt{
+    flex-direction: column-reverse;
+}
+
+.box__btn{
+    width: 100%;
+}
+
+.footer{
+    margin-top: 50px;
+}

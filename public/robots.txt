@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /assets/img/
+Disallow: /cargando.php
+Disallow: /index.php
+Disallow: /dinamica.php
+Disallow: /clave.php
+# Permitir acceso a todo lo demás
+Allow: /
